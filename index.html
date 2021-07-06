@@ -693,8 +693,7 @@
 
       }
 
-
-
+      else {
       newRow.innerHTML = `
 		<div class="c-list__grid">
 			<div class="c-flag c-place u-bg--transparent">${member.rank}</div>
@@ -714,6 +713,8 @@
 			</div>
 		</div>
 	`;
+      }
+ 
       if (member.rank === 1) {
         newRow.querySelector(".c-place").classList.add("u-text--dark");
         newRow.querySelector(".c-place").classList.add("u-bg--yellow");
