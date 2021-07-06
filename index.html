@@ -611,7 +611,7 @@
       {
         rank: 1,
         name: "Jopraveen",
-        handle: "https://instagram.com/jopraveen_18",
+        handle: "jopraveen_18",
         img: "https://i.ibb.co/GVxyj94/jop-logo.jpg",
         kudos: 190,
         sent: 31,
@@ -619,7 +619,7 @@
       {
         rank: 2,
         name: "Cyber PJ",
-        handle: "https://twitter.com/cyberpj1",
+        handle: "cyberpj1",
         img: "https://i.ibb.co/55xsHJy/cyberpj-logo.jpg",
         kudos: 160,
         sent: 21,
@@ -635,7 +635,7 @@
       {
         rank: 4,
         name: "CyberExploitMe",
-        handle: "https://instagram.com/cyberexploitme",
+        handle: "cyberexploitme",
         img: "https://i.ibb.co/0MddbBk/cyber-logo.jpg",
         kudos: 100,
         sent: 4,
@@ -643,7 +643,7 @@
       {
         rank: 5,
         name: "0xgodson",
-        handle: "https://instagram.com/0xgodson",
+        handle: "0xgodson",
         img: "https://i.ibb.co/cLB9J6m/god-logo.jpg",
         kudos: 90,
         sent: 16,
@@ -669,6 +669,32 @@
     team.forEach((member) => {
       let newRow = document.createElement("li");
       newRow.classList = "c-list__item";
+
+      if (member.name === 'Cyber PJ') {
+      newRow.innerHTML = `
+                <div class="c-list__grid">
+                        <div class="c-flag c-place u-bg--transparent">${member.rank}</div>
+                        <div class="c-media">
+                                <img class="c-avatar c-media__img" src="${member.img}" />
+                                <div class="c-media__content">
+                                        <div class="c-media__title">${member.name}</div>
+                                        <a class="c-media__link u-text--small" href="https://twitter.com/${
+            member.handle
+          }" target="_blank">@${member.handle}</a>
+                                </div>
+                        </div>
+                        <div class="u-text--right c-kudos">
+                                <div class="u-mt--8">
+                                        <strong>${member.kudos}</strong> ${randomEmoji()}
+                                </div>
+                        </div>
+                </div>
+        `;
+
+      }
+
+
+
       newRow.innerHTML = `
 		<div class="c-list__grid">
 			<div class="c-flag c-place u-bg--transparent">${member.rank}</div>
@@ -676,7 +702,7 @@
 				<img class="c-avatar c-media__img" src="${member.img}" />
 				<div class="c-media__content">
 					<div class="c-media__title">${member.name}</div>
-					<a class="c-media__link u-text--small" href="${
+					<a class="c-media__link u-text--small" href="https://instagram.com/${
             member.handle
           }" target="_blank">@${member.handle}</a>
 				</div>
